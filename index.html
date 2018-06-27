@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="author" content="Jenayah Amira">
+
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="css/responsiveform1.css" />
+    <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="css/responsiveform2.css" />
+    <link rel="stylesheet" media="screen and (max-width: 350px)" href="css/responsiveform3.css" />
+</head>
+<body style="background-image: url(money1.jpg) ; background-size:cover ">
+
+    <div id="container">
+
+        <header>
+            <h1>Currency Converter </h1>
+            <p>Enter your amount and select currencies to convert</p>
+        </header>
+
+        <div class="input_div">
+
+            <label for="amount" style="color: rgba(255, 255, 255)"><strong>Enter amount:</strong></label>
+            <input id="amount" name="currency" type="number" min="1" value="0.00"> <br>
+
+            <label for="currency_from" style="color: rgba(255, 255, 255)"><strong>From:</strong> </label>
+            <select id="currency_from" class="currency_convert_from"></select>
+
+            <label for="currency_to" style="color: rgba(255, 255, 255)"><strong>To:</strong> </label>
+            <select id="currency_to" class="currency_convert_to"></select>
+
+            <input id="convert_currency" type="submit" value="Convert Currency">
+
+        </div>
+
+        <div class="output_div">
+
+            <label for="original_currency" ><strong>Original Currency</strong> </label>
+            <input type="text" name="original_currency" id="original_currency" width="100px"; disabled="true"></input>
+
+            <label for="converted_currency"   style="color: rgba(255, 255, 255)"><strong>Converted Currency</strong>  </label>
+            <input type="text" name="converted_currency" id="converted_currency" width="100px"; disabled="true"></input>
+
+        </div>
+
+        <footer>JENAYAH AMIRA</footer>
+
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('index.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
